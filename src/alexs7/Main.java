@@ -24,16 +24,15 @@ public class Main extends Application {
         mainBorderPane.setPadding(new Insets(8));
 
         HBox controls = new HBox();
+        controls.setSpacing(8);
         Button loadBtn = new Button("Load Image");
-        Button sobelEdgeDetectionBtn  = new Button("Sobel Edge Detection");
+        Button resetBtn = new Button("Reset");
         loadBtn.setMaxWidth(Double.MAX_VALUE);
-        sobelEdgeDetectionBtn.setMaxWidth(Double.MAX_VALUE);
 
         utils.setBrowseFileAction(loadBtn);
-        utils.setSobelEdgeDetection(sobelEdgeDetectionBtn);
+        utils.setResetAction(resetBtn);
 
-        controls.setSpacing(8);
-        controls.getChildren().addAll(loadBtn,sobelEdgeDetectionBtn);
+        controls.getChildren().addAll(loadBtn,resetBtn);
         mainBorderPane.setBottom(controls);
 
         primaryStage.sizeToScene();
